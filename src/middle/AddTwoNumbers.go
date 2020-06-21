@@ -24,36 +24,31 @@ import "common"
 func main()  {
 	l1First := common.ListNode{
 		Val: 2,
-		Next: nil,
 	}
 	l1Second := common.ListNode{
 		Val: 4,
-		Next: nil,
 	}
 	l1Third := common.ListNode{
 		Val: 3,
-		Next: nil,
 	}
 	l1First.Next = &l1Second
 	l1Second.Next = &l1Third
 
 	l2First := common.ListNode{
 		Val: 5,
-		Next: nil,
 	}
 	l2Second := common.ListNode{
 		Val: 6,
-		Next: nil,
 	}
 	l2Third := common.ListNode{
 		Val: 4,
-		Next: nil,
 	}
 	l2First.Next = &l2Second
 	l2Second.Next = &l2Third
 
 	result := addTwoNumbers(&l1First, &l2First)
-	displayNumNode(result)
+	print(common.List2Str(&l1First), " + ", common.List2Str(&l2First))
+	print(" = ", common.List2Str(result))
 }
 
 /*
@@ -103,15 +98,4 @@ func addTwoNumbers(l1 * common.ListNode, l2 * common.ListNode) * common.ListNode
 
 	}
 	return resultHead.Next
-}
-
-func displayNumNode(num * common.ListNode) {
-	var cur *common.ListNode
-	cur = num
-	print(cur.Val)
-
-	cur = cur.Next
-	for ;cur != nil;cur = cur.Next {
-		print("->", cur.Val)
-	}
 }
